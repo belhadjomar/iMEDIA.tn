@@ -3,10 +3,11 @@
 ================================ */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif;
   background: #f4f6f9;
   color: #1f2933;
@@ -17,14 +18,12 @@ body {
 ================================ */
 .main-header {
   background-color: #0f172a;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-align: center;
 }
 
 .navbar .nav-links {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -52,6 +51,18 @@ body {
 }
 
 /* ===============================
+   LOGO
+================================ */
+.logo-container {
+  text-align: center;
+}
+
+.logo-container img {
+  width: 180px;
+  margin-top: 20px;
+}
+
+/* ===============================
    TITLES
 ================================ */
 h1.aceuilh {
@@ -75,20 +86,11 @@ h1.aceuilh {
 }
 
 /* ===============================
-   LOGO
-================================ */
-center img {
-  width: 180px;
-  margin-top: 20px;
-}
-
-/* ===============================
    SERVICES CARDS
 ================================ */
 .divacceuil {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 25px;
   padding: 30px;
 }
@@ -96,7 +98,6 @@ center img {
 /* CARD */
 .divimg {
   background: white;
-  width: 280px;
   border-radius: 18px;
   padding: 25px 20px;
   text-align: center;
@@ -104,7 +105,6 @@ center img {
   border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
 
-  /* IMPORTANT FOR SAME HEIGHT */
   display: flex;
   flex-direction: column;
 }
@@ -198,30 +198,50 @@ center img {
 /* ===============================
    MAP
 ================================ */
-.sec2 {
-  margin: 60px 20px;
+/* ===== Section Map ===== */
+
+.map-section {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .map {
-  text-align: center;
+  display: flex;
+  flex-direction: column;   /* يخلي النص فوق الصورة */
+  align-items: center;
+  gap: 15px;
 }
 
-.map div {
-  display: inline-block;
-  overflow: hidden;
+/* النص (Cliquer ici) */
+.map-caption a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f59e0b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.map-caption a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+.map-image img {
+  width: 700px;      
+  height: 400px;      
+  max-width: 95%;    
+  object-fit: cover;   
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: 0.3s;
 }
 
-.map img {
-  width: 700px;
-  max-width: 100%;
-  transition: transform 0.5s ease;
+
+.map-image img:hover {
+  transform: scale(1.03);
 }
 
-.map img:hover {
-  transform: scale(1.1);
-}
 
 /* ===============================
    FOOTER
@@ -234,15 +254,10 @@ center img {
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   padding: 30px 20px;
-}
-
-.footer-col {
-  width: 280px;
-  margin: 10px;
 }
 
 .footer-col h3 {
@@ -252,7 +267,6 @@ center img {
 
 .footer-col ul {
   list-style: none;
-  padding: 0;
 }
 
 .footer-col ul li {
@@ -287,14 +301,11 @@ center img {
     font-size: 2rem;
   }
 
-  .divimg {
-    width: 90%;
-  }
-
   .sec1 {
     flex-direction: column;
   }
 }
+
 
 
 
